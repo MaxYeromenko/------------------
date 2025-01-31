@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музичні уподобання - Максим Єрьоменко</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            Header сторінки
+            <nav>
+                <button class="burger-menu" aria-label="Меню">☰</button>
+                <ul class="menu">
+                    <li><a href="/">Головна</a></li>
+                    <li><a href="#top">До початку</a></li>
+                    <li><a href="#bottom">До кінця</a></li>
+                    <li><a href="/form.html">Форма опитування</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div>
+                <h1>Ваші музичні уподобання</h1>
+                <form action="submit" method="post">
+                    <label for="name">Ваше ім'я:</label>
+                    <input type="text" name="name"><br><br>
+
+                    <label for="genre">Улюблений жанр музики:</label>
+                    <select name="genre">
+                        <option value="rock">Рок</option>
+                        <option value="pop">Поп</option>
+                        <option value="jazz">Джаз</option>
+                        <option value="classical">Класична музика</option>
+                    </select><br><br>
+
+                    <label>Як часто ви слухаєте музику?</label><br>
+                    <input type="radio" name="frequency" value="daily">
+                    <label for="daily">Щодня</label><br>
+                    <input type="radio" name="frequency" value="weekly">
+                    <label for="weekly">Щотижня</label><br>
+                    <input type="radio" name="frequency" value="monthly">
+                    <label for="monthly">Щомісяця</label><br><br>
+
+                    <label>Виберіть ваших улюблених виконавців:</label><br>
+                    <input type="checkbox" name="artists" value="artist1">
+                    <label for="artist1">Виконавець 1</label><br>
+                    <input type="checkbox" name="artists" value="artist2">
+                    <label for="artist2">Виконавець 2</label><br>
+                    <input type="checkbox" name="artists" value="artist3">
+                    <label for="artist3">Виконавець 3</label><br>
+                    <input type="checkbox" name="artists" value="artist4">
+                    <label for="artist4">Виконавець 4</label><br><br>
+
+                    <label for="comments">Коментарі:</label><br>
+                    <textarea name="comments" cols="50"></textarea><br><br>
+
+                    <input type="submit" value="Надіслати">
+                </form>
+                <br>
+                <span>Єрьоменко Максим</span>
+                <br>
+                <a href="/index.html">Видатна постать</a>
+            </div>
+        </main>
+        <footer id="bottom">
+            Роботу виконав Єрьоменко Максим, ПІ-411<br>
+            25.10.2024
+        </footer>
+    </div>
+
+    <script src="post.js"></script>
+</body>
+
+</html>

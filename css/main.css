@@ -1,0 +1,358 @@
+:root {
+    --main-color: 55, 55, 55;
+    --secondary-color: 255, 102, 0;
+    --background-color: 235, 235, 205;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: grid;
+    gap: 24px;
+    grid-template-rows: auto auto;
+    background-color: transparent;
+    height: fit-content !important;
+}
+
+nav {
+    position: relative;
+}
+
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav .menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.burger-menu {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.burger-menu:focus {
+    outline: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main,
+aside,
+#sidebar,
+footer {
+    padding: 1rem;
+}
+
+html,
+body,
+.container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: grey !important;
+}
+
+body div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+body p {
+    text-align: justify;
+    text-indent: 20px;
+}
+
+body p::first-letter {
+    /* color: rgb(var(--secondary-color)); */
+    font-size: large;
+    font-weight: 700;
+}
+
+body h1 {
+    font-weight: 350;
+    font-size: 26px;
+    /* color: rgb(var(--secondary-color)); */
+    /* background-color: rgb(var(--main-color)); */
+}
+
+div img {
+    border-radius: 5px;
+}
+
+.photo {
+    color: rgb(150, 150, 150);
+    padding: 5px;
+}
+
+div table {
+    width: 100%;
+}
+
+div table th {
+    /* background-color: rgb(var(--main-color)); */
+    color: rgb(var(--secondary-color));
+}
+
+div table tr:nth-child(even) {
+    background-color: rgb(var(--background-color));
+}
+
+form {
+    padding: 10px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+form input {
+    border-radius: 10px;
+}
+
+form input[type="submit"] {
+    font-size: larger;
+    background-color: lightblue;
+}
+
+form input[type="submit"]:hover {
+    background-color: rgb(91, 114, 122);
+}
+
+form input:focus {
+    box-shadow: green 5px 5px 10px;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: purple;
+    text-decoration: underline;
+}
+
+a:active {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+header {
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: rgb(var(--main-color)); */
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    /* color: rgb(var(--secondary-color)); */
+    z-index: 1;
+    border-bottom: solid 1px grey;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.relative-box {
+    position: relative;
+    min-width: 100%;
+    min-height: 350px;
+    border: 1px solid #ddd;
+    /* background-color: #f0f0f0; */
+}
+
+.relative-box img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 80%;
+    border-radius: 5px;
+}
+
+footer {
+    /* color: rgb(var(--secondary-color)); */
+    /* background-color: rgb(var(--main-color)); */
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#sidebar,
+aside {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Мобільний вигляд */
+@media (max-width: 719px) {
+    nav .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: grey;
+        padding: 1rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    nav .menu.active {
+        display: flex;
+        max-height: 300px;
+        width: fit-content;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    nav .menu li a:focus {
+        outline-offset: 2px;
+    }
+}
+
+/* Планшети */
+@media (min-width: 720px) and (max-width: 1020px) {
+    .container {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    header {
+        grid-column: 1 / span 12;
+    }
+
+    nav {
+        grid-column: 1 / span 11;
+    }
+
+    main,
+    footer {
+        grid-column: 6 / span 10;
+    }
+
+    #sidebar {
+        grid-row: 1;
+    }
+
+    #sidebar,
+    aside {
+        grid-column: 1 / span 5;
+    }
+}
+
+/* Десктопи */
+@media (min-width: 1021px) {
+    .container {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    header,
+    footer {
+        grid-column: 1 / span 12;
+    }
+
+    nav {
+        grid-column: 3 / span 8;
+    }
+
+    main {
+        grid-column: 4 / span 6;
+    }
+
+    main,
+    #sidebar,
+    aside {
+        grid-row: 1 / 2;
+    }
+
+    #sidebar {
+        grid-column: 1 / span 3;
+    }
+
+    aside {
+        grid-column: 10 / span 3;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        color: white !important;
+    }
+
+    header,
+    div,
+    footer {
+        background-color: black;
+    }
+
+    nav {
+        background-color: black;
+    }
+
+    main,
+    aside,
+    #sidebar {
+        background-color: black;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    * {
+        color: black !important;
+    }
+
+    header,
+    div,
+    footer {
+        background-color: white;
+    }
+
+    nav {
+        background-color: white;
+    }
+
+    main,
+    aside,
+    #sidebar {
+        background-color: white;
+    }
+}

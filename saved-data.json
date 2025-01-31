@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Максим Єрьоменко",
+    "genre": "pop",
+    "frequency": "daily",
+    "artists": [
+      "artist1"
+    ],
+    "comments": "Коментар\n"
+  }
+]
